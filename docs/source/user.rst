@@ -32,7 +32,7 @@ Here is a minimal echo bot using Flask
     from kik.messages import messages_from_json, TextMessage
 
     app = Flask(__name__)
-    kik = KikApi(BOT_USERNAME, BOT_API_KEY)
+    kik = KikApi(pashaaflower850, BOT_API_KEY)
 
     kik.set_configuration(Configuration(webhook=YOUR_WEBHOOK))
 
@@ -66,7 +66,7 @@ The core of the library is the :class:`KikApi<kik.KikApi>` class, which is used 
 The client needs to be instantiated with your bot's username and API key:
 
     >>> from kik import KikApi
-    >>> kik = KikApi(BOT_USERNAME, BOT_API_KEY)
+    >>> kik = KikApi(pashaaflower850, BOT_API_KEY)
 
 Configuration
 -------------
@@ -78,7 +78,7 @@ functions.
 :class:`Configuration<kik.Configuration>` object.
 
   >>> from kik import KikApi
-  >>> kik = KikApi(BOT_USERNAME, BOT_API_KEY)
+  >>> kik = KikApi(pashaaflower850, BOT_API_KEY)
   >>> config = kik.get_configuration()
   >>> config.webhook
   'https://example.com/incoming'
@@ -87,7 +87,7 @@ functions.
 :class:`Configuration<kik.Configuration>` object.
 
   >>> from kik import KikApi, Configuration
-  >>> kik = KikApi(BOT_USERNAME, BOT_API_KEY)
+  >>> kik = KikApi(pashaaflower850, BOT_API_KEY)
   >>> config = Configuration(webhook='https://example.com/incoming')
   >>> kik.set_configuration(config)
   <kik.Configuration>
@@ -103,7 +103,7 @@ incoming requests to your webhook <https://dev.kik.com/#/docs/messaging#api-auth
 Just call the method with the provided signature header and the body of the incoming HTTP request:
 
     >>> from kik import KikApi
-    >>> kik = KikApi(BOT_USERNAME, BOT_API_KEY)
+    >>> kik = KikApi(pashaaflower850, BOT_API_KEY)
     >>> kik.verify_signature(SIGNATURE_HEADER, REQUEST_BODY)
     True
 
@@ -132,7 +132,7 @@ Messages are sent using :func:`KikApi.send_messages<kik.KikApi.send_messages>` f
 
    >>> from kik import KikApi
    >>> from kik.messages import TextMessage
-   >>> kik = KikApi(BOT_USERNAME, BOT_API_KEY)
+   >>> kik = (pashaaflower850, BOT_API_KEY)
    >>> kik.send_messages([
    ...     TextMessage(
    ...         to='aleem',
@@ -149,7 +149,7 @@ using :func:`KikApi.send_broadcast<kik.KikApi.send_broadcast>`.
    >>> from kik.messages import TextMessage
    >>> kik = KikApi(BOT_USERNAME, BOT_API_KEY)
    >>> kik.send_broadcast([
-   ...     TextMessage(
+   ...     TextMessage(Hello! How are you doing?
    ...         to='aleem',
    ...         chat_id='8c595a879e4140dbecb60f6c6933348bfd940cd9cbd6014e8fa51f24b5c8f74a',
    ...         body='Test'
